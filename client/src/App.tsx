@@ -9,8 +9,20 @@ import './App.css';
 //
 
 export class App extends React.Component<{}, {}> {
+    state = {apiResponse: ""};
     constructor(props: any) {
         super(props);
+        this.state = {apiResponse: ""};
+    }
+
+    callApi() {
+        fetch("http://localhost:9000/testApi")
+            .then(res => res.text())
+            .then(res => this.setState({apiResponse: res}));
+    }
+
+    componentDidMount() {
+        this.callApi();
     }
 
 
@@ -22,6 +34,10 @@ export class App extends React.Component<{}, {}> {
                     <p>
                         Edit <code>src/App.tsx</code> and save to reload.
                     </p>
+                    <p className="App-intro">
+                        {this.state.apiResponse}
+                    </p>
+
                     <a
                         className="App-link"
                         href="https://reactjs.org"
