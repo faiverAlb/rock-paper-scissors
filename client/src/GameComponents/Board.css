@@ -1,0 +1,19 @@
+.board-container {
+
+}
+
+.board-container .board-header {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.board-container .board-body {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.board-container .board-body .sign-element {
+    margin: 5px;
+}
